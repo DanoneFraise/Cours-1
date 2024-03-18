@@ -12,8 +12,6 @@ i = np.random.choice(range(l))
 
 word_fr = voc['Définition'].values[i]
 st.write("Traduis : "+word_fr)
-indices = np.random.choice(l, size=4, replace=False)
-st.write(indices)
 j = np.random.choice(indices)
 
 def is_correct(i, j):
