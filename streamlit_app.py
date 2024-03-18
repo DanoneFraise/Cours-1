@@ -15,3 +15,6 @@ st.write(word_fr)
 indice = np.random.choice(l, size=4, replace=False)
 st.write(indice)
 st.button("refresh")
+
+for i in range(4):
+  st.button(voc["Hanzi"].values[indices[i]])
