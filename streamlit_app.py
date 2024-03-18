@@ -16,7 +16,7 @@ indices = np.random.choice(l, size=4, replace=False)
 st.write(indices)
 
 def is_correct(i, j):
-  if i==j
+  if i==j:
    st.write("Bien joué !")
 else:
   st.write("Perdu !")
