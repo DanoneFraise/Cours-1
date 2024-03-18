@@ -12,6 +12,6 @@ i = np.random.choice(range(l))
 
 word_fr = voc['Définition'].values[i]
 st.write(word_fr)
-indice = np.random.choice(l, size=4, replace=false)
+indice = np.random.choice(l, size=4, replace=False)
 st.write(indice)
 st.button("refresh")
