@@ -14,7 +14,16 @@ word_fr = voc['Définition'].values[i]
 st.write(word_fr)
 indices = np.random.choice(l, size=4, replace=False)
 st.write(indices)
-st.button("refresh")
+
+def is_correct(i, j):
+  if i==j
+   st.write("Bien joué !")
+else:
+  st.write("Perdu !")
 
 for i in range(4):
-  st.button(voc["Hanzi"].values[indices[i]])
+  st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=[)
+  if (voc["Hanzi"] == voc["Définition"]):
+      st.write('Bien joué !')
+      else:
+        st.write('Perdu !')
