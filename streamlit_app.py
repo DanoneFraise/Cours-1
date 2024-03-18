@@ -23,7 +23,3 @@ def is_correct(i, j):
 
 for i in range(4):
   st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=[indices[i],j])
-  if (voc["Hanzi"] == voc["Définition"]):
-      st.write('Bien joué !')
-      else:
-        st.write('Perdu !')
