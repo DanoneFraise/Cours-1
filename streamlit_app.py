@@ -2,30 +2,28 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 voc = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSeARXO3MT92XWpg2IwyQOQ8Wi2upeEkqJvNJz5i3bRqHdJIrTchGBBclVu-3Jd1ohYKM4IxecgV64I/pub?output=csv')
+
 l = voc.shape[0]
-indices = np.random.choice(l, size=4, replace=False)
+if "indices" in st.session_state:
+ indices=st.session_state["indices"]
+else:
+ indices = np.random.choice(l, size=4, replace=False)
 j = np.random.choice(indices)
 word_fr=voc['Définition'].values[j]
 st.write('Traduis: '+word_fr)
 
 def is_correct(i, j):
-  if i==j:
-    st.write("Bien joué !")
-  else:
-    st.write("Perdu !")
-  if ("Perdu !"):
-    st.session_state["indices"] = indices
-  if ("Bien joué !"):
-    st.session_state["indices"]
-
+ if i==j:
+   st.write("Bien joué !")
+   if "indices" in st.session_state:
+     del st.session_state["indices"]
+ else:
+   st.write("C'est perdu.")
+   st.session_state["indices"]=indices
 col1, col2 = st.columns(2) 
 with col1:
-    for i in range(2):
-        st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=(indices[i],j))
+   for i in range(2):
+       st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=(indices[i],j))
 with col2:
-    for i in range(2,4):
-        st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=(indices[i],j))
-
-
-st.button("Seconday button")  # st.button default type is secondary
-st.button("Primary button", type="primary")
+   for i in range(2,4):
+       st.button(voc["Hanzi"].values[indices[i]], on_click= is_correct, args=(indices[i],j))
