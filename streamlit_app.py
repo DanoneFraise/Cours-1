@@ -13,6 +13,10 @@ def is_correct(i, j):
     st.write("Bien joué !")
   else:
     st.write("Perdu !")
+    if ("Perdu !")
+    st.session_state["indices"] = indices
+    if ("Bien joué !")
+    st.session_state["indices"]
 
 col1, col2 = st.columns(2) 
 with col1:
