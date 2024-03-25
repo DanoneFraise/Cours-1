@@ -5,7 +5,7 @@ voc = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSeARXO3MT92X
 
 l = voc.shape[0]
 if "indices" in st.session_state:
- indices=st.session_state["indices"]
+ del.indices=st.session_state["indices"]
 else:
  indices = np.random.choice(l, size=4, replace=False)
 j = np.random.choice(indices)
